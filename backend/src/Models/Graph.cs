@@ -2,12 +2,10 @@ using System.Text.Json.Serialization;
 
 namespace QuantumHack.Models;
 
-public class Graph(List<Vertice> vertices, List<Edge> edges, Vertice startPoint, Vertice endPoint)
+public class Graph(List<Vertice> vertices, Vertice startPoint, Vertice endPoint)
 {
     [JsonPropertyName("vertices")]
-    public List<Vertice> Vertices { get; init; } = vertices;
-    [JsonPropertyName("edges")]
-    public List<Edge> Edges { get; init; } = edges;
+    public List<Vertice> Vertices { get; set; } = vertices;
     [JsonPropertyName("startPoint")]
     public Vertice StartPoint { get; init; } = startPoint;
     [JsonPropertyName("endPoint")]
