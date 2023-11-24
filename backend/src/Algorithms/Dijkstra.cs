@@ -1,47 +1,11 @@
 using QuantumHack.Constants;
 using QuantumHack.Models;
 
-namespace QuantumHack.Arithmetic;
+namespace QuantumHack.Algorithms;
 
 public static class Dijkstra
 {
-    public static List<Edge> FindOptimalEmissions(Graph graph)
-    {
-        List<Edge> optimalPath = [];
-        DijkstrasAlgorithm(graph, OptimisationType.Emissions);
-        BuildOptimalRoute(graph, optimalPath, graph.EndPoint);
-        optimalPath.Reverse();
-        return optimalPath;
-    }
-
-    public static List<Edge> FindOptimalCost(Graph graph)
-    {
-        List<Edge> optimalPath = [];
-        DijkstrasAlgorithm(graph, OptimisationType.Cost);
-        BuildOptimalRoute(graph, optimalPath, graph.EndPoint);
-        optimalPath.Reverse();
-        return optimalPath;
-    }
-
-    public static List<Edge> FindOptimalTime(Graph graph)
-    {
-        List<Edge> optimalPath = [];
-        DijkstrasAlgorithm(graph, OptimisationType.Time);
-        BuildOptimalRoute(graph, optimalPath, graph.EndPoint);
-        optimalPath.Reverse();
-        return optimalPath;
-    }
-
-    public static List<Edge> FindBalancedOptimal(Graph graph)
-    {
-        List<Edge> optimalPath = [];
-        DijkstrasAlgorithm(graph, OptimisationType.Balanced);
-        BuildOptimalRoute(graph, optimalPath, graph.EndPoint);
-        optimalPath.Reverse();
-        return optimalPath;
-    }
-
-    private static void DijkstrasAlgorithm(Graph graph, OptimisationType optimisationType)
+    public static void DijkstrasAlgorithm(Graph graph, OptimisationType optimisationType)
     {
         graph.StartPoint.CostFromStart = 0;
         List<Vertice> priorityQueue = [ graph.StartPoint ];
@@ -88,23 +52,5 @@ public static class Dijkstra
             }
         }
         graph.Vertices = visitedVertices;
-    }
-
-    private static void BuildOptimalRoute(Graph graph, List<Edge> edges, Vertice vertice)
-    {
-        if (vertice.Id == graph.StartPoint.Id) return;
-        var closestNeighbourToStart = graph.FindVerticeNeighbours(vertice).MinBy(x => x.CostFromStart);
-        edges.Add(vertice.Edges.Where(x => x.DestinationId == closestNeighbourToStart!.Id && x.IsOptimalEdge).Single());
-        BuildOptimalRoute(graph, edges, closestNeighbourToStart!);
-    }
-
-    private enum OptimisationType
-    {
-        Emissions,
-        Cost,
-        Time,
-        Balanced
-
-
     }
 }
