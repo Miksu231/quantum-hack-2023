@@ -10,4 +10,5 @@ public record Edge
     public int DestinationId { get; init; }
     [JsonPropertyName("weight")]
     public EdgeWeight Weight { get; init; } = new();
+    public bool IsOptimalEdge { get; set; } = false;
 }

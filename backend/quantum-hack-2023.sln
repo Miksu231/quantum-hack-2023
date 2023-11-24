@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{5B94F67D-93F7-41A0-A120-8EAEC08AE79F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "src", "backend\src\QuantumHack.csproj", "{5E4253A3-E339-4BEB-98EC-1A6143BC3D92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "src", "src\QuantumHack.csproj", "{5E4253A3-E339-4BEB-98EC-1A6143BC3D92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
