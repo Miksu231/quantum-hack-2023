@@ -4,7 +4,7 @@
     "latitude": 0.0,
     "longitude": 0.0,
     "id": 1,
-    "Name": "startPoint",
+    "name": "startPoint",
     "edges": [
       {
 
@@ -15,7 +15,7 @@
     "latitude": 80.0,
     "longitude": 80.0,
     "id": 7,
-    "Name": "endPoint",
+    "name": "endPoint",
     "edges": [
       {
         
