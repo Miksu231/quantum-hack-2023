@@ -14,6 +14,13 @@ public class Graph(List<Vertice> vertices, Vertice startPoint, Vertice endPoint)
     public List<Vertice> FindVerticeNeighbours(Vertice vertice)
     {
         var neighbourIds = vertice.Edges.Select(x => x.DestinationId);
-        return Vertices.FindAll(vertice => neighbourIds.Contains(vertice.Id));
+        var allVertices = Vertices.Concat([ StartPoint, EndPoint ]);
+        return allVertices.Where(vertice => neighbourIds.Contains(vertice.Id)).ToList();
+    }
+
+    public List<Vertice> FindVerticeOriginNeighbours(Vertice vertice)
+    {
+        var allVertices = Vertices.Concat([ StartPoint, EndPoint ]);
+        return allVertices.Where(currentVertice => currentVertice.Edges.Any(edge => edge.DestinationId == vertice.Id)).ToList();
     }
 }

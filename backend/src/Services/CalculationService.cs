@@ -25,8 +25,8 @@ public class CalculationService: ICalculationService
     private static void BuildOptimalRoute(Graph graph, List<Edge> edges, Vertice vertice)
     {
         if (vertice.Id == graph.StartPoint.Id) return;
-        var closestNeighbourToStart = graph.FindVerticeNeighbours(vertice).MinBy(x => x.CostFromStart);
-        edges.Add(closestNeighbourToStart!.Edges.Where(x => x.DestinationId == vertice.Id && x.IsOptimalEdge).Single());
+        var closestNeighbourToStart = graph.FindVerticeOriginNeighbours(vertice).MinBy(x => x.CostFromStart);
+        edges.Add(closestNeighbourToStart!.Edges.Where(x => x.DestinationId == vertice.Id && x.IsOptimalEdge).First());
         BuildOptimalRoute(graph, edges, closestNeighbourToStart!);
     }
 }

@@ -21,7 +21,7 @@ public class QuantumHackController(ICalculationService calculationService): Cont
     {
         if (Enum.TryParse<OptimisationType>(type, true, out var optimisationType))
         {
-           return new OptimalResult(_calculationService.FindOptimalRoute(GetGraph(), optimisationType));
+            return new OptimalResult(_calculationService.FindOptimalRoute(GetGraph(), optimisationType));
         }
         else
         {

@@ -1,25 +1,106 @@
 {
-  "vertices": [],
+  "vertices": [
+    {
+      "latitude": 1.0,
+      "longitude": 1.0,
+      "id": 2,
+      "name": "Turkey",
+      "edges": 
+      [
+        {
+          "originId": 2,
+          "destinationId": 100,
+          "weight": {
+            "emissions": 100,
+            "cost": 100,
+            "time": 15
+          }
+        }
+      ]
+    },
+    {
+      "latitude": 2.0,
+      "longitude": 2.0,
+      "id": 3,
+      "name": "Italy",
+      "edges": [
+        {
+          "originId": 3,
+          "destinationId": 4,
+          "weight": {
+            "emissions": 20,
+            "cost": 10,
+            "time": 50
+          }
+        }
+      ]
+    },
+    {
+      "latitude": 3.0,
+      "longitude": 3.0,
+      "id": 4,
+      "name": "Germany",
+      "edges": [
+        {
+          "originId": 4,
+          "destinationId": 5,
+          "weight": {
+            "emissions": 50,
+            "cost": 30,
+            "time": 20
+          }
+        }
+      ]
+    },
+    {
+      "latitude": 4.0,
+      "longitude": 4.0,
+      "id": 5,
+      "name": "Sweden",
+      "edges": [
+        {
+          "originId": 5,
+          "destinationId": 100,
+          "weight": {
+            "emissions": 50,
+            "cost": 30,
+            "time": 20
+          }
+        }
+      ]
+    }
+  ],
   "startPoint": {
     "latitude": 0.0,
     "longitude": 0.0,
     "id": 1,
-    "name": "startPoint",
+    "name": "United States",
     "edges": [
       {
-
-    }
-  ]
+        "originId": 1,
+        "destinationId": 2,
+        "weight": {
+          "emissions": 200,
+          "cost": 200,
+          "time": 30
+        }
+      },
+      {
+        "originId": 1,
+        "destinationId": 3,
+        "weight": {
+          "emissions": 30,
+          "cost": 50,
+          "time": 50
+        }
+      }
+    ]
   },
   "endPoint": {
     "latitude": 80.0,
     "longitude": 80.0,
-    "id": 7,
-    "name": "endPoint",
-    "edges": [
-      {
-        
-    }
-    ]
+    "id": 100,
+    "name": "Finland",
+    "edges": []
   }
 }

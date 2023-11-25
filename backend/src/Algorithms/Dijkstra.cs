@@ -14,18 +14,21 @@ public static class Dijkstra
         {
             priorityQueue = [.. priorityQueue.OrderBy(x => x.CostFromStart)];
             var vertice = priorityQueue.First();
+            var verticeNeighbours = graph.FindVerticeNeighbours(vertice);
             vertice.Visited = true;
             priorityQueue.Remove(vertice);
             if(vertice.Id == graph.EndPoint.Id)
             {
                 graph.EndPoint.CostFromStart = vertice.CostFromStart;
                 graph.EndPoint.Visited = true;
-                break;
             }
-            visitedVertices.Add(vertice);
+            if (vertice.Id != graph.StartPoint.Id)
+            {
+                visitedVertices.Add(vertice);
+            }
             foreach(var edge in vertice.Edges)
             {
-                var dest = priorityQueue.Find(x => x.Id.Equals(edge.DestinationId));
+                var dest = verticeNeighbours.Find(x => x.Id.Equals(edge.DestinationId));
                 var meaningfulWeight = 
                     optimisationType == OptimisationType.Emissions ? edge.Weight.Emissions
                     : optimisationType == OptimisationType.Cost ? edge.Weight.Cost
@@ -33,7 +36,8 @@ public static class Dijkstra
                     : FactorWeightingConstants.TIME * Math.Pow(edge.Weight.Time, 2)
                         + FactorWeightingConstants.EMISSIONS * Math.Pow(edge.Weight.Emissions, 2)
                         + FactorWeightingConstants.COST * Math.Pow(edge.Weight.Cost, 2);
-                if (dest!.CostFromStart == double.PositiveInfinity || dest.CostFromStart > vertice.CostFromStart + meaningfulWeight)
+                Console.WriteLine($"Edge from {edge.OriginId} to {edge.DestinationId}, cost {meaningfulWeight}");
+                if (dest!.CostFromStart == double.MaxValue || dest.CostFromStart > vertice.CostFromStart + meaningfulWeight)
                 {
                     dest.CostFromStart = vertice.CostFromStart + meaningfulWeight;
                     foreach (var originalEdge in vertice.Edges)
