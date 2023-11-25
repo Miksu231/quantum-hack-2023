@@ -6,11 +6,10 @@ namespace QuantumHack.Services;
 
 public class CalculationService : ICalculationService
 {
-    private readonly Graph _graph = JsonReader.ReadGraphFromFile();
 
     public Graph GetGraph()
     {
-        return _graph;
+        return JsonReader.ReadGraphFromFile();;
     }
 
     public List<Edge> FindOptimalRoute(Graph graph, OptimisationType optimisationType)
