@@ -11,22 +11,22 @@ public class QuantumHackController(ICalculationService calculationService) : Con
 {
     private readonly ICalculationService _calculationService = calculationService;
 
-    [HttpGet]
-    public Graph GetGraph()
+    [HttpGet("{continent}")]
+    public Graph GetGraph(string continent)
     {
-        return _calculationService.GetGraph();
+        return _calculationService.GetGraph(continent);
     }
 
-    [HttpPost]
-    public OptimalResult CalculateOptimalRoute([FromQuery(Name = "type")] string type = "Balanced")
+    [HttpPost("{continent}")]
+    public OptimalResult CalculateOptimalRoute(string continent, [FromQuery(Name = "type")] string type = "Balanced")
     {
         if (Enum.TryParse<OptimisationType>(type, true, out var optimisationType))
         {
-            return new OptimalResult(_calculationService.FindOptimalRoute(GetGraph(), optimisationType));
+            return new OptimalResult(_calculationService.FindOptimalRoute(GetGraph(continent), optimisationType));
         }
         else
         {
-            return new OptimalResult(_calculationService.FindOptimalRoute(GetGraph(), OptimisationType.Balanced));
+            return new OptimalResult(_calculationService.FindOptimalRoute(GetGraph(continent), OptimisationType.Balanced));
         }
 
     }

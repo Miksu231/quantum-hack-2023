@@ -7,9 +7,9 @@ namespace QuantumHack.Services;
 public class CalculationService : ICalculationService
 {
 
-    public Graph GetGraph()
+    public Graph GetGraph(string continent)
     {
-        return JsonReader.ReadGraphFromFile();
+        return JsonReader.ReadGraphFromFile(continent);
     }
 
     public List<Edge> FindOptimalRoute(Graph graph, OptimisationType optimisationType)

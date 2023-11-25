@@ -6,5 +6,5 @@ public interface ICalculationService
 {
     public List<Edge> FindOptimalRoute(Graph graph, OptimisationType optimisationType);
 
-    public Graph GetGraph();
+    public Graph GetGraph(string continent);
 }

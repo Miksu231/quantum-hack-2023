@@ -5,9 +5,9 @@ namespace QuantumHack.Utils;
 
 public static class JsonReader
 {
-    public static Graph ReadGraphFromFile()
+    public static Graph ReadGraphFromFile(string continent)
     {
-        string jsonString = File.ReadAllText("./AsiaGraph.json");
+        string jsonString = File.ReadAllText($"./{continent}Graph.json");
         var graph = JsonSerializer.Deserialize<Graph>(jsonString);
         return graph!;
     }
