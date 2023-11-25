@@ -1,0 +1,430 @@
+{
+    "vertices": [
+      {
+        "latitude": 48.5734,
+        "longitude": 7.7521,
+        "id": 2,
+        "name": "Strasbourg",
+        "edges": 
+        [
+            {
+                "id": 14,
+                "originId": 2,
+                "destinationId": 4,
+                "capacity": 2500,
+                "weight": {
+                  "emissions": 13500,
+                  "cost": 12000,
+                  "time": 6
+                }
+            },
+            {
+                "id": 15,
+                "originId": 2,
+                "destinationId": 4,
+                "capacity": 2000,
+                "weight": {
+                  "emissions": 5000,
+                  "cost": 6000,
+                  "time": 5
+                }
+            },
+            {
+                "id": 16,
+                "originId": 2,
+                "destinationId": 3,
+                "capacity": 3500,
+                "weight": {
+                  "emissions": 25200,
+                  "cost": 22400,
+                  "time": 8
+                }
+            },
+            {
+                "id": 17,
+                "originId": 2,
+                "destinationId": 3,
+                "capacity": 3000,
+                "weight": {
+                  "emissions": 15000,
+                  "cost": 18000,
+                  "time": 10
+                }
+            }
+        ]
+      },
+      {
+        "latitude": 48.2082,
+        "longitude": 16.371,
+        "id": 3,
+        "name": "Wien",
+        "edges": [
+            {
+                "id": 18,
+                "originId": 3,
+                "destinationId": 4,
+                "capacity": 3500,
+                "weight": {
+                  "emissions": 28800,
+                  "cost": 25600,
+                  "time": 8
+                }
+            },
+            {
+                "id": 19,
+                "originId": 3,
+                "destinationId": 4,
+                "capacity": 3000,
+                "weight": {
+                  "emissions": 12000,
+                  "cost": 14400,
+                  "time": 8
+                }
+            },
+            {
+                "id": 20,
+                "originId": 3,
+                "destinationId": 7,
+                "capacity": 4000,
+                "weight": {
+                  "emissions": 46800,
+                  "cost": 41600,
+                  "time": 13
+                }
+            },
+            {
+                "id": 21,
+                "originId": 3,
+                "destinationId": 7,
+                "capacity": 3200,
+                "weight": {
+                  "emissions": 19200,
+                  "cost": 23040,
+                  "time": 12
+                }
+            }
+        ]
+      },
+      {
+        "latitude": 45.4642,
+        "longitude": 9.19,
+        "id": 4,
+        "name": "Milan",
+        "edges": [
+            {
+                "id": 22,
+                "originId": 4,
+                "destinationId": 3,
+                "capacity": 3500,
+                "weight": {
+                  "emissions": 28800,
+                  "cost": 25600,
+                  "time": 8
+                }
+            },
+            {
+                "id": 23,
+                "originId": 4,
+                "destinationId": 3,
+                "capacity": 3000,
+                "weight": {
+                  "emissions": 12000,
+                  "cost": 14400,
+                  "time": 8
+                }
+            },
+            {
+                "id": 24,
+                "originId": 4,
+                "destinationId": 7,
+                "capacity": 3000,
+                "weight": {
+                  "emissions": 51300,
+                  "cost": 45600,
+                  "time": 19
+                }
+            },
+            {
+                "id": 25,
+                "originId": 4,
+                "destinationId": 7,
+                "capacity": 2800,
+                "weight": {
+                  "emissions": 28000,
+                  "cost": 33600,
+                  "time": 20
+                }
+            }
+        ]
+      },
+      {
+        "latitude": 59.3293,
+        "longitude": 18.0686,
+        "id": 5,
+        "name": "Stockholm",
+        "edges": [
+            {
+                "id": 11,
+                "originId": 5,
+                "destinationId": 8,
+                "capacity": 3000,
+                "weight": {
+                  "emissions": 10500,
+                  "cost": 7500,
+                  "time": 5
+                }
+            }
+        ]
+      },
+      {
+        "latitude": 60.1699,
+        "longitude": 24.9384,
+        "id": 6,
+        "name": "Helsinki",
+        "edges": 
+        [
+            {
+                "id": 7,
+                "originId": 6,
+                "destinationId": 5,
+                "capacity": 500,
+                "weight": {
+                  "emissions": 18900,
+                  "cost": 16800,
+                  "time": 42
+                }
+            },
+            {
+                "id": 8,
+                "originId": 6,
+                "destinationId": 5,
+                "capacity": 200,
+                "weight": {
+                  "emissions": 4000,
+                  "cost": 4800,
+                  "time": 40
+                }
+            },
+            {
+                "id": 9,
+                "originId": 6,
+                "destinationId": 5,
+                "capacity": 1000,
+                "weight": {
+                  "emissions": 8400,
+                  "cost": 6000,
+                  "time": 12
+                }
+            },
+            {
+                "id": 10,
+                "originId": 6,
+                "destinationId": 8,
+                "capacity": 1000,
+                "weight": {
+                  "emissions": 4200,
+                  "cost": 3000,
+                  "time": 6
+                }
+            }
+        ]
+      },
+      {
+        "latitude": 44.4268,
+        "longitude": 26.1025,
+        "id": 7,
+        "name": "Bucharest",
+        "edges": 
+        [
+            {
+                "id": 26,
+                "originId": 7,
+                "destinationId": 9,
+                "capacity": 6000,
+                "weight": {
+                  "emissions": 75600,
+                  "cost": 67200,
+                  "time": 14
+                }
+            },
+            {
+                "id": 27,
+                "originId": 7,
+                "destinationId": 9,
+                "capacity": 4500,
+                "weight": {
+                  "emissions": 36000,
+                  "cost": 43200,
+                  "time": 16
+                }
+            },
+            {
+                "id": 28,
+                "originId": 7,
+                "destinationId": 8,
+                "capacity": 3700,
+                "weight": {
+                  "emissions": 63270,
+                  "cost": 56240,
+                  "time": 19
+                }
+            },
+            {
+                "id": 29,
+                "originId": 7,
+                "destinationId": 8,
+                "capacity": 1700,
+                "weight": {
+                  "emissions": 13600,
+                  "cost": 16320,
+                  "time": 16
+                }
+            }
+        ]
+      },
+      {
+        "latitude": 54.352,
+        "longitude": 18.6466,
+        "id": 8,
+        "name": "Gdansk",
+        "edges": 
+        [
+            {
+                "id": 12,
+                "originId": 8,
+                "destinationId": 10,
+                "capacity": 5000,
+                "weight": {
+                  "emissions": 36000,
+                  "cost": 32000,
+                  "time": 8
+                }
+            },
+            {
+                "id": 13,
+                "originId": 8,
+                "destinationId": 10,
+                "capacity": 4000,
+                "weight": {
+                  "emissions": 18000,
+                  "cost": 21600,
+                  "time": 9
+                }
+            }
+        ]
+      },
+      {
+        "latitude": 50.0755,
+        "longitude": 14.4378,
+        "id": 9,
+        "name": "Prague",
+        "edges": 
+        [
+            {
+                "id": 30,
+                "originId": 9,
+                "destinationId": 10,
+                "capacity": 8000,
+                "weight": {
+                  "emissions": 43200,
+                  "cost": 38400,
+                  "time": 6
+                }
+            },
+            {
+                "id": 31,
+                "originId": 9,
+                "destinationId": 10,
+                "capacity": 6000,
+                "weight": {
+                  "emissions": 15000,
+                  "cost": 18000,
+                  "time": 5
+                }
+            }
+        ]
+      }
+    ],
+    "startPoint": {
+      "latitude": 51.9244,
+      "longitude": 4.4777,
+      "id": 1,
+      "name": "Rotterdam",
+      "edges": [
+        {
+            "id": 1,
+            "originId": 1,
+            "destinationId": 2,
+            "capacity": 1500,
+            "weight": {
+              "emissions": 16200,
+              "cost": 14400,
+              "time": 12
+            }
+        },
+        {
+            "id": 2,
+            "originId": 1,
+            "destinationId": 2,
+            "capacity": 1200,
+            "weight": {
+              "emissions": 6000,
+              "cost": 7200,
+              "time": 10
+            }
+        },
+        {
+            "id": 3,
+            "originId": 1,
+            "destinationId": 3,
+            "capacity": 2000,
+            "weight": {
+              "emissions": 21600,
+              "cost": 19200,
+              "time": 12
+            }
+        },
+        {
+            "id": 4,
+            "originId": 1,
+            "destinationId": 3,
+            "capacity": 1800,
+            "weight": {
+              "emissions": 12600,
+              "cost": 15120,
+              "time": 14
+            }
+        },
+        {
+            "id": 5,
+            "originId": 1,
+            "destinationId": 5,
+            "capacity": 1750,
+            "weight": {
+              "emissions": 29400,
+              "cost": 21000,
+              "time": 24
+            }
+        },
+        {
+            "id": 6,
+            "originId": 1,
+            "destinationId": 6,
+            "capacity": 1600,
+            "weight": {
+              "emissions": 40320,
+              "cost": 28800,
+              "time": 36
+            }
+        }
+      ]
+    },
+    "endPoint": {
+      "latitude": 53.5488,
+      "longitude": 9.9872,
+      "id": 10,
+      "name": "Hamburg",
+      "edges": []
+    }
+  }
+  
