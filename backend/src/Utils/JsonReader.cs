@@ -7,7 +7,7 @@ public static class JsonReader
 {
     public static Graph ReadGraphFromFile()
     {
-        string jsonString = File.ReadAllText("./graphDoc.json");
+        string jsonString = File.ReadAllText("./AsiaGraph.json");
         var graph = JsonSerializer.Deserialize<Graph>(jsonString);
         return graph!;
     }

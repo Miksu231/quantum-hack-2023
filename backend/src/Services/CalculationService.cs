@@ -1,4 +1,3 @@
-using System.Text.Json;
 using QuantumHack.Algorithms;
 using QuantumHack.Models;
 using QuantumHack.Utils;
@@ -10,7 +9,7 @@ public class CalculationService : ICalculationService
 
     public Graph GetGraph()
     {
-        return JsonReader.ReadGraphFromFile();;
+        return JsonReader.ReadGraphFromFile();
     }
 
     public List<ValueTuple<List<Edge>, double>> FindOptimalRoute(Graph graph, OptimisationType optimisationType, double demand)
