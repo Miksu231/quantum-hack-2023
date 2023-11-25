@@ -1,9 +1,8 @@
 using QuantumHack.Models;
-using QuantumHack.Services;
 
 public interface ICalculationService
 {
-    public List<Edge> FindOptimalRoute(Graph graph, OptimisationType optimisationType);
+    public List<ValueTuple<List<Edge>, double>> FindOptimalRoute(Graph graph, OptimisationType optimisationType, double demand);
 
     public Graph GetGraph();
 }

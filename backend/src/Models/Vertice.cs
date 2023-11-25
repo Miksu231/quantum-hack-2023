@@ -8,8 +8,6 @@ public record Vertice
     public double Latitude { get; init; }
     [JsonPropertyName("longitude")]
     public double Longitude { get; init; }
-    [JsonPropertyName("capacity")]
-    public double Capacity { get; init; }
     [JsonPropertyName("id")]
     public int Id { get; init; }
     [JsonPropertyName("name")]

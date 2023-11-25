@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace QuantumHack.Models;
 
-public record OptimalResult(List<Edge> Path)
+public record OptimalResult(List<Edge> Path, double PathCapacity)
 {
     [JsonPropertyName("path")]
     public List<Edge> Path { get; init; } = Path;
@@ -12,4 +12,6 @@ public record OptimalResult(List<Edge> Path)
     public double Emissions { get; init; } = Path.Select(x => x.Weight.Emissions).Sum();
     [JsonPropertyName("time")]
     public double Time { get; init; } = Path.Select(x => x.Weight.Time).Sum();
+    [JsonPropertyName("capacity")]
+    public double Capacity { get; init; } = PathCapacity;
 }

@@ -17,15 +17,15 @@ public class QuantumHackController(ICalculationService calculationService) : Con
     }
 
     [HttpPost]
-    public OptimalResult CalculateOptimalRoute([FromQuery(Name = "type")] string type = "Balanced")
+    public List<OptimalResult> CalculateOptimalRoute([FromQuery(Name = "type")] string type = "Balanced", [FromQuery(Name = "demand")] string demand = "0.0")
     {
-        if (Enum.TryParse<OptimisationType>(type, true, out var optimisationType))
+        if (Enum.TryParse<OptimisationType>(type, true, out var optimisationType) && double.TryParse(demand, out var demandAmount))
         {
-            return new OptimalResult(_calculationService.FindOptimalRoute(GetGraph(), optimisationType));
+            return _calculationService.FindOptimalRoute(GetGraph(), optimisationType, demandAmount).Select(path => new OptimalResult(path.Item1, path.Item2)).ToList();
         }
         else
         {
-            return new OptimalResult(_calculationService.FindOptimalRoute(GetGraph(), OptimisationType.Balanced));
+            return _calculationService.FindOptimalRoute(GetGraph(), OptimisationType.Balanced, 0.0).Select(path => new OptimalResult(path.Item1, path.Item2)).ToList();;
         }
 
     }

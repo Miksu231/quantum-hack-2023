@@ -8,8 +8,10 @@
       "edges": 
       [
         {
+          "id": 1,
           "originId": 2,
           "destinationId": 100,
+          "capacity": 200,
           "weight": {
             "emissions": 100,
             "cost": 100,
@@ -25,8 +27,10 @@
       "name": "Italy",
       "edges": [
         {
+          "id": 2,
           "originId": 3,
           "destinationId": 4,
+          "capacity": 150,
           "weight": {
             "emissions": 20,
             "cost": 10,
@@ -42,8 +46,10 @@
       "name": "Germany",
       "edges": [
         {
+          "id": 3,
           "originId": 4,
           "destinationId": 5,
+          "capacity": 150,
           "weight": {
             "emissions": 50,
             "cost": 30,
@@ -59,8 +65,10 @@
       "name": "Sweden",
       "edges": [
         {
+          "id": 4,
           "originId": 5,
           "destinationId": 100,
+          "capacity": 150,
           "weight": {
             "emissions": 50,
             "cost": 30,
@@ -77,8 +85,10 @@
     "name": "United States",
     "edges": [
       {
+        "id": 5,
         "originId": 1,
         "destinationId": 2,
+        "capacity": 200,
         "weight": {
           "emissions": 200,
           "cost": 200,
@@ -86,8 +96,10 @@
         }
       },
       {
+        "id": 6,
         "originId": 1,
         "destinationId": 3,
+        "capacity": 100,
         "weight": {
           "emissions": 30,
           "cost": 50,
