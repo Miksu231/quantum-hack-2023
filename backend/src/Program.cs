@@ -2,7 +2,7 @@ using QuantumHack.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<ICalculationService, CalculationService>();
+builder.Services.AddSingleton<ICalculationService, CalculationService>();
 builder.Services.AddControllers();
 
 var app = builder.Build();
@@ -16,5 +16,10 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.MapControllers();
+
+ app.UseCors(builder => builder
+     .AllowAnyOrigin()
+     .AllowAnyMethod()
+     .AllowAnyHeader());
 
 app.Run();
