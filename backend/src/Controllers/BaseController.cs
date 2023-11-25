@@ -6,7 +6,7 @@ namespace QuantumHack.Controllers;
 [Produces("application/json")]
 [Consumes("application/json")]
 [Route("[controller]")]
-public class QuantumHackController(ICalculationService calculationService): ControllerBase
+public class QuantumHackController(ICalculationService calculationService) : ControllerBase
 {
     private readonly ICalculationService _calculationService = calculationService;
 
@@ -27,7 +27,7 @@ public class QuantumHackController(ICalculationService calculationService): Cont
         {
             return new OptimalResult(_calculationService.FindOptimalRoute(GetGraph(), OptimisationType.Balanced));
         }
-        
+
     }
 
 }

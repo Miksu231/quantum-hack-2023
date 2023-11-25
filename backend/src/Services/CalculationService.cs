@@ -4,7 +4,7 @@ using QuantumHack.Utils;
 
 namespace QuantumHack.Services;
 
-public class CalculationService: ICalculationService
+public class CalculationService : ICalculationService
 {
     private readonly Graph _graph = JsonReader.ReadGraphFromFile();
 

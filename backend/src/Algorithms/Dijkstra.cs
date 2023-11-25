@@ -8,16 +8,16 @@ public static class Dijkstra
     public static void DijkstrasAlgorithm(Graph graph, OptimisationType optimisationType)
     {
         graph.StartPoint.CostFromStart = 0;
-        List<Vertice> priorityQueue = [ graph.StartPoint ];
+        List<Vertice> priorityQueue = [graph.StartPoint];
         List<Vertice> visitedVertices = [];
-        while(priorityQueue.Count > 0)
+        while (priorityQueue.Count > 0)
         {
             priorityQueue = [.. priorityQueue.OrderBy(x => x.CostFromStart)];
             var vertice = priorityQueue.First();
             var verticeNeighbours = graph.FindVerticeNeighbours(vertice);
             vertice.Visited = true;
             priorityQueue.Remove(vertice);
-            if(vertice.Id == graph.EndPoint.Id)
+            if (vertice.Id == graph.EndPoint.Id)
             {
                 graph.EndPoint.CostFromStart = vertice.CostFromStart;
                 graph.EndPoint.Visited = true;
@@ -26,10 +26,10 @@ public static class Dijkstra
             {
                 visitedVertices.Add(vertice);
             }
-            foreach(var edge in vertice.Edges)
+            foreach (var edge in vertice.Edges)
             {
                 var dest = verticeNeighbours.Find(x => x.Id.Equals(edge.DestinationId));
-                var meaningfulWeight = 
+                var meaningfulWeight =
                     optimisationType == OptimisationType.Emissions ? edge.Weight.Emissions
                     : optimisationType == OptimisationType.Cost ? edge.Weight.Cost
                     : optimisationType == OptimisationType.Time ? edge.Weight.Time
