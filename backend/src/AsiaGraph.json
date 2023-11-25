@@ -1,7 +1,7 @@
 {
     "vertices": [
       {
-        "latitude": -29.5945,
+        "latitude": 29.5945,
         "longitude": 56.4720,
         "id": 2,
         "name": "Hormuz",
@@ -289,8 +289,8 @@
         ]
       },
       {
-        "latitude": 35.6764,
-        "longitude": 139.6500,
+        "latitude": 39.9042,
+        "longitude": 116.4074,
         "id": 9,
         "name": "Beijing",
         "edges": [
