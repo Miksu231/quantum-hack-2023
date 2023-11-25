@@ -8,37 +8,15 @@ public class CalculationService: ICalculationService
 {
     private readonly Graph _graph = JsonReader.ReadGraphFromFile();
 
-    public List<Edge> FindOptimalEmissions(Graph graph)
+    public Graph GetGraph()
     {
-        List<Edge> optimalPath = [];
-        Dijkstra.DijkstrasAlgorithm(graph, OptimisationType.Emissions);
-        BuildOptimalRoute(graph, optimalPath, graph.EndPoint);
-        optimalPath.Reverse();
-        return optimalPath;
+        return _graph;
     }
 
-    public List<Edge> FindOptimalCost(Graph graph)
+    public List<Edge> FindOptimalRoute(Graph graph, OptimisationType optimisationType)
     {
         List<Edge> optimalPath = [];
-        Dijkstra.DijkstrasAlgorithm(graph, OptimisationType.Cost);
-        BuildOptimalRoute(graph, optimalPath, graph.EndPoint);
-        optimalPath.Reverse();
-        return optimalPath;
-    }
-
-    public List<Edge> FindOptimalTime(Graph graph)
-    {
-        List<Edge> optimalPath = [];
-        Dijkstra.DijkstrasAlgorithm(graph, OptimisationType.Time);
-        BuildOptimalRoute(graph, optimalPath, graph.EndPoint);
-        optimalPath.Reverse();
-        return optimalPath;
-    }
-
-    public List<Edge> FindBalancedOptimal(Graph graph)
-    {
-        List<Edge> optimalPath = [];
-        Dijkstra.DijkstrasAlgorithm(graph, OptimisationType.Balanced);
+        Dijkstra.DijkstrasAlgorithm(graph, optimisationType);
         BuildOptimalRoute(graph, optimalPath, graph.EndPoint);
         optimalPath.Reverse();
         return optimalPath;

@@ -16,8 +16,8 @@ public record Vertice
     public string Name { get; init; } = string.Empty;
     [JsonPropertyName("edges")]
     public List<Edge> Edges { get; init; } = [];
-    [JsonIgnore]
-    public double CostFromStart { get; set; } = double.PositiveInfinity;
+    [JsonPropertyName("costFromStart")]
+    public double CostFromStart { get; set; } = double.MaxValue;
     [JsonIgnore]
     public bool Visited { get; set; } = false;
 }
