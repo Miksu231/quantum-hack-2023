@@ -1,0 +1,237 @@
+{
+    "vertices": [
+      {
+        "latitude": 8.538,
+        "longitude": -80.7821,
+        "id": 2,
+        "name": "Panama",
+        "edges": 
+        [
+          {
+            "id": 1,
+            "originId": 2,
+            "destinationId": 4,
+            "capacity": 10000,
+            "weight": {
+              "emissions": 58800,
+              "cost": 42000,
+              "time": 6
+            }
+          },
+          {
+            "id": 2,
+            "originId": 2,
+            "destinationId": 3,
+            "capacity": 350,
+            "weight": {
+              "emissions": 28000,
+              "cost": 20000,
+              "time": 4
+            }
+          },
+          {
+            "id": 3,
+            "originId": 2,
+            "destinationId": 4,
+            "capacity": 4000,
+            "weight": {
+              "emissions": 252000,
+              "cost": 224000,
+              "time": 7
+            }
+          }
+        ]
+      },
+      {
+        "latitude": 25.7617,
+        "longitude": -80.1918,
+        "id": 3,
+        "name": "Miami",
+        "edges": 
+        [
+          {
+            "id": 1,
+            "originId": 3,
+            "destinationId": 8,
+            "capacity": 10000,
+            "weight": {
+              "emissions": 33600,
+              "cost": 24000,
+              "time": 6
+            }
+          },
+          {
+            "id": 2,
+            "originId": 3,
+            "destinationId": 5,
+            "capacity": 350,
+            "weight": {
+              "emissions": 63000,
+              "cost": 42000,
+              "time": 7
+            }
+          }
+        ]
+      },
+      {
+        "latitude": 29.7604,
+        "longitude": -95.3698,
+        "id": 4,
+        "name": "Houston",
+        "edges": 
+        [
+          {
+            "id": 1,
+            "originId": 4,
+            "destinationId": 5,
+            "capacity": 10000,
+            "weight": {
+              "emissions": 27000,
+              "cost": 18000,
+              "time": 5
+            }
+          },
+          {
+            "id": 2,
+            "originId": 4,
+            "destinationId": 6,
+            "capacity": 350,
+            "weight": {
+              "emissions": 25200,
+              "cost": 16800,
+              "time": 7
+            }
+          }
+        ]
+      },
+      {
+        "latitude": 33.7488,
+        "longitude": -84.3877,
+        "id": 5,
+        "name": "Atlanta",
+        "edges": 
+        [
+          {
+            "id": 1,
+            "originId": 5,
+            "destinationId": 6,
+            "capacity": 10000,
+            "weight": {
+              "emissions": 6750,
+              "cost": 4500,
+              "time": 5
+            }
+          }
+        ]
+      },
+      {
+        "latitude": 36.1627,
+        "longitude": -86.7816,
+        "id": 6,
+        "name": "Nashville",
+        "edges": 
+        [
+          {
+            "id": 1,
+            "originId": 5,
+            "destinationId": 9,
+            "capacity": 10000,
+            "weight": {
+              "emissions": 7200,
+              "cost": 4800,
+              "time": 4
+            }
+          },
+          {
+            "id": 1,
+            "originId": 5,
+            "destinationId": 10,
+            "capacity": 10000,
+            "weight": {
+              "emissions": 72000,
+              "cost": 48000,
+              "time": 8
+            }
+          }
+        ]
+      },
+      {
+        "latitude": 39.9526,
+        "longitude": -75.1652,
+        "id": 8,
+        "name": "Philadelphia",
+        "edges": 
+        [
+          {
+            "id": 1,
+            "originId": 8,
+            "destinationId": 9,
+            "capacity": 10000,
+            "weight": {
+              "emissions": 25200,
+              "cost": 16800,
+              "time": 4
+            }
+          }
+        ]
+      },
+      {
+        "latitude": 39.1031,
+        "longitude": -84.512,
+        "id": 9,
+        "name": "Cincinnati",
+        "edges": 
+        [
+          {
+            "id": 1,
+            "originId": 9,
+            "destinationId": 10,
+            "capacity": 10000,
+            "weight": {
+              "emissions": 43200,
+              "cost": 28800,
+              "time": 6
+            }
+          }
+        ]
+      }
+    ],
+    "startPoint": {
+      "latitude": -22.9068,
+      "longitude": -43.1729,
+      "id": 1,
+      "name": "Rio De Janeiro",
+      "edges": [
+        {
+          "id": 1,
+          "originId": 1,
+          "destinationId": 2,
+          "capacity": 20000,
+          "weight": {
+            "emissions": 182000,
+            "cost": 130000,
+            "time": 13
+          }
+        },
+        {
+            "id": 2,
+            "originId": 1,
+            "destinationId": 3,
+            "capacity": 1000,
+            "weight": {
+                "emissions": 21000,
+                "cost": 15000,
+                "time": 6
+            }
+        }
+      ]
+    },
+    "endPoint": {
+      "latitude": 41.8781,
+      "longitude": -87.6298,
+      "id": 10,
+      "name": "Chicago",
+      "edges": []
+    }
+  }
+  
