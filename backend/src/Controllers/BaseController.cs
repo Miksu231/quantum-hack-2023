@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using QuantumHack.Models;
+using QuantumHack.Services;
 
 namespace QuantumHack.Controllers;
 [ApiController]
