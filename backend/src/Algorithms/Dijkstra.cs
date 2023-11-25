@@ -36,7 +36,6 @@ public static class Dijkstra
                     : FactorWeightingConstants.TIME * Math.Pow(edge.Weight.Time, 2)
                         + FactorWeightingConstants.EMISSIONS * Math.Pow(edge.Weight.Emissions, 2)
                         + FactorWeightingConstants.COST * Math.Pow(edge.Weight.Cost, 2);
-                Console.WriteLine($"Edge from {edge.OriginId} to {edge.DestinationId}, cost {meaningfulWeight}");
                 if (dest!.CostFromStart == double.MaxValue || dest.CostFromStart > vertice.CostFromStart + meaningfulWeight)
                 {
                     dest.CostFromStart = vertice.CostFromStart + meaningfulWeight;
