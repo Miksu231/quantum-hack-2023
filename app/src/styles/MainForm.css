@@ -1,0 +1,7 @@
+.main-form {
+    position: absolute;
+    z-index: 10;
+    padding: 20px;
+    left: 0;
+    top: 0;
+}

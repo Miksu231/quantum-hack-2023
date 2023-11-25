@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "dependencies": {
     "mapbox-gl": "^2.15.0",
+    "python": "^0.0.4",
+    "python2": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-form-component": "^2.6.4",
     "react-scripts": "5.0.1"
   },
   "scripts": {

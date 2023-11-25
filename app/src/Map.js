@@ -7,7 +7,7 @@ mapboxgl.accessToken =
 
 const URL = 'http://localhost:5000/quantumHack';
 
-const Map = ({ routeType }) => {
+const Map = ({ pathData }) => {
   const mapContainerRef = useRef(null);
 
   const [graphData, setGraphData] = useState();
@@ -30,12 +30,12 @@ const Map = ({ routeType }) => {
       container: mapContainerRef.current,
       style: "mapbox://styles/mapbox/streets-v11",
       center: [0, 0],
-      zoom: 10,
+      zoom: 5,
     });
 
-    if (graphData !== undefined) {
+    let vertices = {};
 
-      let vertices = {};
+    if (graphData !== undefined) {
       let verticeArray = graphData.vertices;
 
       // starting node
@@ -89,14 +89,54 @@ const Map = ({ routeType }) => {
       });
     }
 
+    if (graphData !== undefined && pathData !== undefined) {
+      console.log(pathData);
+      map.on('load', () => {
+        pathData.path.forEach((step, i) => {
+          console.log(step);
+          const road = [vertices[step.originId], vertices[step.destinationId]];
+          console.log(road);
+          map.addSource(`step-${i}`, {
+            'type': 'geojson',
+            'data': {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'LineString',
+                'coordinates': road
+              }
+            }
+          });
+  
+          map.addLayer({
+            'id': `step-${i}`,
+            'type': 'line',
+            'source': `step-${i}`,
+            'layout': {
+              'line-join': 'round',
+              'line-cap': 'round'
+            },
+            'paint': {
+              'line-color': '#448',
+              'line-width': 8
+            }
+          });
+        });
+      });
+    };
+
     // Add navigation control (the +/- zoom buttons)
     map.addControl(new mapboxgl.NavigationControl(), "top-right");
 
     // Clean up on unmount
     return () => map.remove();
-  }, [routeType, graphData]);
+  }, [pathData, graphData]);
 
-  return <div className="map-container" ref={mapContainerRef} />;
+  return(
+    <div>
+      <div className="map-container" ref={mapContainerRef} />
+    </div>
+  );
 };
 
 export default Map;

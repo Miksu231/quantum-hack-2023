@@ -1,15 +1,17 @@
 import React, {useState} from "react";
 import Map from "./Map";
+import { FormThemeProvider } from 'react-form-component'
+import MainForm from './MainForm'
 
 function App() {
+  const [pathData, setPathData] = useState();
 
-  const [routeType, setRoute] = useState("fastest");
-
-  return <div>
-      <button onClick={() => setRoute("fastest")}>Fastest route</button>
-      <button onClick={() => setRoute("cheapest")}>Cheapest route</button>
-      <Map routeType={routeType} />
-    </div>;
+  return (
+    <FormThemeProvider>
+      <MainForm pathData={pathData} setPathData={setPathData} />
+      <Map pathData={pathData} />
+    </FormThemeProvider>
+  );
 }
 
 export default App;
