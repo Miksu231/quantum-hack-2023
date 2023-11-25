@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 
 WORKDIR /src
 
-COPY . ./
+COPY ./src/ ./
 RUN dotnet restore
-EXPOSE 80
+EXPOSE 5000
 ENTRYPOINT ["dotnet", "run"]
