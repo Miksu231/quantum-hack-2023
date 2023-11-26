@@ -18,3 +18,5 @@ https://nodejs.org/en/download/current
 The backend can be run in the directory `backend/src` with the command `dotnet run`.
 
 The frontend can be run in the directory `app`, with `npm install` to install the required packages, and `npm start` to start the application.
+
+To see the map, you must generate your own Mapbox GL access token, and place it in the variable `mapboxgl.accesstoken` in `app/src/Map.js`
