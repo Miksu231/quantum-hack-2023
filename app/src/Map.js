@@ -42,17 +42,20 @@ const Map = ({ pathData, area }) => {
       const startCoords = [graphData.startPoint.longitude, graphData.startPoint.latitude];
       vertices[graphData.startPoint.id] = startCoords;
       verticeArray.push(graphData.startPoint);
-      new mapboxgl.Marker().setLngLat(startCoords).addTo(map);
+      let startPopup = new mapboxgl.Popup().setText(`${graphData.startPoint.name}`).addTo(map)
+      new mapboxgl.Marker().setLngLat(startCoords).setPopup(startPopup).addTo(map);
       // endpoint
       const endCoords = [graphData.endPoint.longitude, graphData.endPoint.latitude];
       vertices[graphData.endPoint.id] = endCoords;
       verticeArray.push(graphData.endPoint);
-      new mapboxgl.Marker().setLngLat(endCoords).addTo(map);
+      let endPopup = new mapboxgl.Popup().setText(`${graphData.endPoint.name}`).addTo(map)
+      new mapboxgl.Marker().setLngLat(endCoords).setPopup(endPopup).addTo(map);
       // rest of the nodes
       graphData.vertices.forEach(vertice => {
         const coords = [vertice.longitude, vertice.latitude];
         vertices[vertice.id] = coords;
-        new mapboxgl.Marker().setLngLat(coords).addTo(map);
+        let popup = new mapboxgl.Popup().setText(`${vertice.name}`).addTo(map)
+        new mapboxgl.Marker().setLngLat(coords).setPopup(popup).addTo(map);
       });
       // draw edges
       map.on('load', () => {
