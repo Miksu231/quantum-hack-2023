@@ -1,29 +1,44 @@
-import React from "react";
+import React, {useState} from "react";
 import "./styles/MainForm.css";
 import Form, {
     Select,
 } from 'react-form-component'
 import InfoBox from "./InfoBox";
 
-const URL = 'http://localhost:5000/quantumHack';
+const URL = 'http://localhost:5000/quantumHack/';
 
-const MainForm = ({pathData, setPathData}) => {
+const MainForm = ({pathData, setPathData, setArea, area}) => {
+
+    const [type, setType] = useState("Balanced");
+
     const  handleChange = (event) => {
         if (event === 'All') {
-            getPath('Balanced');
+            setType('Balanced');
         } else {
-            getPath(event);
+            setType(event);
         }
+        getPath()
 	};
 
-    const getPath = async (routeType) => {
-        const pathData = await fetch(URL, {method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: routeType })});
+    const  handleAreaChange = (event) => {
+        setArea(event);
+        getPath()
+	};
+
+    const getPath = async () => {
+        const pathData = await fetch(URL + `${area}/`, {method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: type, demand: 100.0 })});
         const data = await pathData.json();
         setPathData(data);
     };
 
     return (
         <Form className="main-form" fields={['type']}>
+            <Select
+                onChange={handleAreaChange}
+                name='type'
+                label='Business area'
+                options={['Asia', 'Europe', 'NorthAmerica']}
+            />
             <Select
                 onChange={handleChange}
                 name='type'

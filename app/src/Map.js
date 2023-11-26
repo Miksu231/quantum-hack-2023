@@ -2,18 +2,18 @@ import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "./styles/Map.css";
 
-mapboxgl.accessToken =
-  "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
+mapboxgl.accessToken = "pk.eyJ1IjoidmFyaG9sYSIsImEiOiJjbHBlN3J0N2wxMnF1Mmpwcmd5OTIxajAxIn0.S2DU5ZBFpRzNoFQwZ7JJqw"
+// "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA";
 
-const URL = 'http://localhost:5000/quantumHack';
+const URL = 'http://localhost:5000/quantumHack/';
 
-const Map = ({ pathData }) => {
+const Map = ({ pathData, area }) => {
   const mapContainerRef = useRef(null);
 
   const [graphData, setGraphData] = useState();
 
   const getData = async () => {
-    const nodeData = await fetch(URL)
+    const nodeData = await fetch(URL + `${area}/`)
     const data = await nodeData.json();
     setGraphData(data);
   };
@@ -21,16 +21,16 @@ const Map = ({ pathData }) => {
   // GET basic node data
   useEffect(() => {
     getData();
-  }, []);
+  }, [area]);
 
   // Initialize map when component mounts
   useEffect(() => {
 
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/streets-v11",
+      style: "mapbox://styles/mapbox/satellite-v9",
       center: [0, 0],
-      zoom: 5,
+      zoom: 1,
     });
 
     let vertices = {};
@@ -39,18 +39,18 @@ const Map = ({ pathData }) => {
       let verticeArray = graphData.vertices;
 
       // starting node
-      const startCoords = [graphData.startPoint.latitude, graphData.startPoint.longitude];
+      const startCoords = [graphData.startPoint.longitude, graphData.startPoint.latitude];
       vertices[graphData.startPoint.id] = startCoords;
       verticeArray.push(graphData.startPoint);
       new mapboxgl.Marker().setLngLat(startCoords).addTo(map);
       // endpoint
-      const endCoords = [graphData.endPoint.latitude, graphData.endPoint.longitude];
+      const endCoords = [graphData.endPoint.longitude, graphData.endPoint.latitude];
       vertices[graphData.endPoint.id] = endCoords;
       verticeArray.push(graphData.endPoint);
       new mapboxgl.Marker().setLngLat(endCoords).addTo(map);
       // rest of the nodes
       graphData.vertices.forEach(vertice => {
-        const coords = [vertice.latitude, vertice.longitude];
+        const coords = [vertice.longitude, vertice.latitude];
         vertices[vertice.id] = coords;
         new mapboxgl.Marker().setLngLat(coords).addTo(map);
       });
@@ -93,9 +93,7 @@ const Map = ({ pathData }) => {
       console.log(pathData);
       map.on('load', () => {
         pathData.path.forEach((step, i) => {
-          console.log(step);
-          const road = [vertices[step.originId], vertices[step.destinationId]];
-          console.log(road);
+          const road = [vertices[step.destinationId], vertices[step.originId]];
           map.addSource(`step-${i}`, {
             'type': 'geojson',
             'data': {
