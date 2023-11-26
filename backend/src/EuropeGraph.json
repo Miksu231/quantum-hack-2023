@@ -152,7 +152,7 @@
                 "weight": {
                   "emissions": 28000,
                   "cost": 33600,
-                  "time": 20
+                  "time": 5
                 }
             }
         ]
@@ -264,7 +264,7 @@
                 "destinationId": 8,
                 "capacity": 3700,
                 "weight": {
-                  "emissions": 63270,
+                  "emissions": 163270,
                   "cost": 56240,
                   "time": 19
                 }
@@ -275,8 +275,8 @@
                 "destinationId": 8,
                 "capacity": 1700,
                 "weight": {
-                  "emissions": 13600,
-                  "cost": 16320,
+                  "emissions": 113600,
+                  "cost": 116320,
                   "time": 16
                 }
             }

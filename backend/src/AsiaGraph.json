@@ -128,7 +128,7 @@
             "destinationId": 5,
             "capacity": 5000,
             "weight": {
-              "emissions": 225000,
+              "emissions": 75000,
               "cost": 200000,
               "time": 50
             }
@@ -139,7 +139,7 @@
             "destinationId": 6,
             "capacity": 3000,
             "weight": {
-              "emissions": 216000,
+              "emissions": 16000,
               "cost": 192000,
               "time": 80
             }
@@ -221,7 +221,7 @@
             "destinationId": 8,
             "capacity": 3600,
             "weight": {
-              "emissions": 129600,
+              "emissions": 29600,
               "cost": 115200,
               "time": 40
             }
@@ -348,17 +348,6 @@
           }
         },
         {
-          "id": 4,
-          "originId": 1,
-          "destinationId": 2,
-          "capacity": 150,
-          "weight": {
-            "emissions": 1350,
-            "cost": 1350,
-            "time": 9
-          }
-        },
-        {
           "id": 5,
           "originId": 1,
           "destinationId": 3,
@@ -366,17 +355,6 @@
           "weight": {
             "emissions": 210000,
             "cost": 150000,
-            "time": 60
-          }
-        },
-        {
-          "id": 6,
-          "originId": 1,
-          "destinationId": 3,
-          "capacity": 200,
-          "weight": {
-            "emissions": 1800,
-            "cost": 1800,
             "time": 9
           }
         }

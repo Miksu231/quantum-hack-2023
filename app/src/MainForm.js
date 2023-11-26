@@ -26,7 +26,7 @@ const MainForm = ({pathData, setPathData, setArea, area}) => {
 	};
 
     const getPath = async () => {
-        const pathData = await fetch(URL + `${area}/`, {method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: type, demand: 100.0 })});
+        const pathData = await fetch(URL + `${area}/?type=${type}`, {method: "POST", headers: { 'Content-Type': 'application/json' }});
         const data = await pathData.json();
         setPathData(data);
     };
